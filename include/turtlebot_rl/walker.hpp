@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2021 Siddharth Telang
+ * Copyright (c) 2022 Siddharth Telang
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -20,45 +20,61 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *
- * @file obstacle_detector.hpp
+* @file walker.hpp
  * @author Siddharth Telang (stelang@umd.edu)
  * @brief 
  * @version 0.1
- * @date 2021-11-29
+ * @date 22022-02-24
  * 
- * @copyright Copyright (c) 2021
- * 
- */
+ * @copyright Copyright (c) 2022
+*/
 
-#ifndef INCLUDE_TURTLEBOT_RL_OBSTACLE_DETECTOR_HPP_
-#define INCLUDE_TURTLEBOT_RL_OBSTACLE_DETECTOR_HPP_
-#endif  //  INCLUDE_TURTLEBOT_RL_OBSTACLE_DETECTOR_HPP_
+#ifndef INCLUDE_TURTLEBOT_RL_WALKER_HPP_
+#define INCLUDE_TURTLEBOT_RL_WALKER_HPP_
+#endif  // INCLUDE_TURTLEBOT_RL_WALKER_HPP_
 
 #include <sensor_msgs/LaserScan.h>
+#include <geometry_msgs/Twist.h>
 #include <memory>
 #include <string>
 #include "ros/ros.h"
 #include "std_msgs/String.h"
+#include "../include/turtlebot_rl/obstacle_detector.hpp"
 
-class ObstacleDetector {
+class Walker {
  public:
     /**
-     * @brief Construct a new Obstacle Detector object
+     * @brief Construct a new Walker object
      * 
+     * @param nh_ node handle
      */
-    ObstacleDetector();
+    explicit Walker(ros::NodeHandle *nh_);
+    ~Walker();
     /**
-     * @brief Checks if obstacle is nearby
+     * @brief begins the walking process
      * 
-     * @param msg 
-     * @return std::string 
      */
-    std::string isCloseToObstacle(const sensor_msgs::LaserScan::ConstPtr &msg);
+    void start_walking();
     /**
-     * @brief Destroy the Obstacle Detector object
+     * @brief Laser Sensor callback
      * 
+     * @param msg data from sensor
      */
-    ~ObstacleDetector();
-    int range = 10;
+    void lidarCallback(const sensor_msgs::LaserScan::ConstPtr &msg);
+    /**
+     * @brief send velocity to TTB3
+     * 
+     * @param obs direction of obstacle
+     */
+    void send_velocity(std::string obs);
+    int rate;
+    ObstacleDetector *detect = new ObstacleDetector();
+
+ private:
+    ros::NodeHandle *nh;
+    void init();
+    ros::Subscriber lidar_sub;
+    ros::Publisher vel_pub;
+    std::string topic;
 };
+
