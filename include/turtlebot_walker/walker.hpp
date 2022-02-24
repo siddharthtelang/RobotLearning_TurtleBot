@@ -29,9 +29,9 @@
  * @copyright Copyright (c) 2021
 */
 
-#ifndef INCLUDE_TURTLEBOT_WALKER_WALKER_HPP_
-#define INCLUDE_TURTLEBOT_WALKER_WALKER_HPP_
-#endif  // INCLUDE_TURTLEBOT_WALKER_WALKER_HPP_
+#ifndef INCLUDE_TURTLEBOT_RL_WALKER_HPP_
+#define INCLUDE_TURTLEBOT_RL_WALKER_HPP_
+#endif  // INCLUDE_TURTLEBOT_RL_WALKER_HPP_
 
 #include <sensor_msgs/LaserScan.h>
 #include <geometry_msgs/Twist.h>
@@ -39,7 +39,7 @@
 #include <string>
 #include "ros/ros.h"
 #include "std_msgs/String.h"
-#include "../include/turtlebot_walker/obstacle_detector.hpp"
+#include "../include/turtlebot_rl/obstacle_detector.hpp"
 
 class Walker {
  public:

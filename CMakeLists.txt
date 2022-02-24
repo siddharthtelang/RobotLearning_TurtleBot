@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(turtlebot_walker)
+project(turtlebot_rl)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp

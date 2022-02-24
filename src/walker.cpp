@@ -25,13 +25,13 @@
  * @author Siddharth Telang (stelang@umd.edu)
  * @brief 
  * @version 0.1
- * @date 2021-11-29
+ * @date 2022-02-24
  * 
- * @copyright Copyright (c) 2021
+ * @copyright Copyright (c) 2022
  * 
  */
 
-#include "../include/turtlebot_walker/walker.hpp"
+#include "../include/turtlebot_rl/walker.hpp"
 
 
 Walker::Walker(ros::NodeHandle *nh_) {

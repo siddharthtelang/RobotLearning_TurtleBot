@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: turtlebot_walker
-Description: Description of turtlebot_walker
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: 

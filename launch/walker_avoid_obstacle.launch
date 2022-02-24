@@ -17,8 +17,8 @@
   </include>
 
     <node 
-        pkg="turtlebot_walker" 
-        name="turtlebot_walker" 
+        pkg="turtlebot_rl" 
+        name="turtlebot_rl" 
         type="walker_node" 
         output="screen" 
         args = "$(arg x_init) $(arg y_init)"/>
