@@ -1,0 +1,8 @@
+prefix=/home/siddharth/ENPM808X/ttbwlkr/src/turtlebot_walker/build/devel
+
+Name: turtlebot_walker
+Description: Description of turtlebot_walker
+Version: 0.0.0
+Cflags: -I/home/siddharth/ENPM808X/ttbwlkr/src/turtlebot_walker/include
+Libs: -L${prefix}/lib 
+Requires: 
