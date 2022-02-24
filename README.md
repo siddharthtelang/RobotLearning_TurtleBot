@@ -1,8 +1,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ---
-# turtlebot_walker
+# turtlebot_rl
 ## Introduction
-Simple Walker algorithm for TurtleBot3 with obstacle avoidance
+Simple obstacle avoidance algorithm for TurtleBot3 with Lidar
 
 <p align="center">
 <img src="result/Test_2.gif"/>
@@ -17,7 +17,7 @@ ROS Melodic
 
 ## Gazebo Simulation Map
 Custom world used
- - worlds/map.world
+ - worlds/map.world (can be updated in launch file)
 
 ## Building the package
 1) Create a catkin workspace catkin_ws
@@ -31,7 +31,7 @@ git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
 ```
 Refer this [link](https://automaticaddison.com/how-to-launch-the-turtlebot3-simulation-with-ros/).
 
-4) Clone the turtlebot_walker package
+4) Clone the turtlebot_rl package
 ```
 git clone https://github.com/siddharthtelang/turtlebot_rl.git
 
